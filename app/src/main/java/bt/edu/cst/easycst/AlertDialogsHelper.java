@@ -223,6 +223,7 @@ public class AlertDialogsHelper {
             public void onClick(View v) {
                 final ColorPicker colorPicker = new ColorPicker(activity);
                 colorPicker.setTitle(activity.getResources().getString(R.string.choose_color));
+
                 colorPicker.show();
                 colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
                     @Override
@@ -320,8 +321,8 @@ public class AlertDialogsHelper {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(activity, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        date.setText(String.format("%02d-%02d-%02d", dayOfMonth, month+1, year));
-                        homework.setDate(String.format("%02d-%02d-%02d", dayOfMonth, month+1, year));
+                        date.setText(String.format("%02d-%02d-%02d", year, month+1, dayOfMonth));
+                        homework.setDate(String.format("%02d-%02d-%02d", year, month+1, dayOfMonth));
                     }
                 }, mYear, mMonth, mdayofMonth);
                 datePickerDialog.setTitle(R.string.choose_date);
@@ -411,8 +412,8 @@ public class AlertDialogsHelper {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(activity, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        date.setText(String.format("%02d-%02d-%02d", dayOfMonth, month+1, year));
-                        homework.setDate(String.format("%02d-%02d-%02d", dayOfMonth, month+1, year));
+                        date.setText(String.format("%02d-%02d-%02d", year, month+1, dayOfMonth));
+                        homework.setDate(String.format("%02d-%02d-%02d", year, month+1, dayOfMonth));
                     }
                 }, mYear, mMonth, mdayofMonth);
                 datePickerDialog.setTitle(R.string.choose_date);

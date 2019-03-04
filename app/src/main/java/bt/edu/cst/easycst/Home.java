@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Home extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         ImageView maintain = (ImageView)findViewById(R.id.maintain);
+        TextView mai = (TextView)findViewById(R.id.mai);
         ImageView about = (ImageView) findViewById(R.id.about);
         ImageView feedback =(ImageView) findViewById(R.id.feedback);
         ImageView attendance =(ImageView) findViewById(R.id.attendance);
