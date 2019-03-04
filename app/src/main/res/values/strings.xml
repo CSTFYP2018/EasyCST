@@ -77,8 +77,8 @@
     <string name="deadline_dialog">Deadline:</string>
     <string name="description_dialog">Description:</string>
     <string name="desctiption">Desctiption</string>
-    <string name="edit_homework">Edit homework</string>
-    <string name="add_homework">Add homework</string>
+    <string name="edit_homework">Edit Assignment</string>
+    <string name="add_homework">Add Assignment</string>
     <string name="deadline_snackbar">"Deadline field can not be empty!</string>
     <string name="date">Date</string>
 

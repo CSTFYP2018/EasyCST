@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:orientation="horizontal"
+        android:orientation="h orizontal"
         card_view:cardCornerRadius="5dp"
         card_view:cardElevation="5dp">
 
@@ -113,7 +113,7 @@
                 android:background="?selectableItemBackgroundBorderless"
                 card_view:layout_constraintEnd_toEndOf="parent"
                 card_view:layout_constraintTop_toTopOf="@+id/subjecthomework"
-                card_view:srcCompat="@drawable/baseline_expand_more_black_24" />
+                card_view:srcCompat="@drawable/menuclick" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>

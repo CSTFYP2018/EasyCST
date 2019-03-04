@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -8,115 +8,89 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".3"
-            android:text="@string/subject_dialog"
-            android:textColor="@android:color/black" />
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/subjecthomework"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight=".7"
+            android:hint="@string/module"
             android:imeOptions="actionDone"
-            android:inputType="text"
-            android:singleLine="true" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".3"
-            android:text="@string/description_dialog"
+            android:inputType="textCapWords"
+            android:singleLine="true"
+            android:textAlignment="center"
             android:textColor="@android:color/black" />
 
         <EditText
             android:id="@+id/descriptionhomework"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".7"
+            android:hint="Assignment Description"
             android:imeOptions="actionDone"
-            android:inputType="text"
-            android:singleLine="true" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".3"
-            android:text="@string/deadline_dialog"
+            android:inputType="textCapSentences"
+            android:singleLine="true"
+            android:textAlignment="center"
             android:textColor="@android:color/black" />
 
-        <TextView
-            android:id="@+id/datehomework"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight=".7"
-            android:text="@string/select_date"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:weightSum="1">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+            <TextView
+                android:id="@+id/datehomework"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="Set Deadline"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/grey"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </TableRow>
+
 
         <Button
+            android:layout_marginTop="10dp"
             android:id="@+id/select_color"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="50dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="5dp"
             android:background="@color/white"
             android:text="@string/select_color"
             android:textAlignment="center"
-            android:textAllCaps="true"
+            android:textAllCaps="false"
             android:textSize="18sp"
             android:textStyle="bold" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:text="@string/cancel"
-            android:layout_weight="1"
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/cancel"
-            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:weightSum="1">
 
-        <Button
-            android:text="@string/save"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/save"
-            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog" />
+            <Button
+                android:id="@+id/cancel"
+                style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:text="@string/cancel" />
+
+            <Button
+                android:id="@+id/save"
+                style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:text="@string/save" />
+        </TableRow>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>
