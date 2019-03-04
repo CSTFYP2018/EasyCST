@@ -320,8 +320,8 @@ public class AlertDialogsHelper {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(activity, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        date.setText(String.format("%02d-%02d-%02d", year, month+1, dayOfMonth));
-                        homework.setDate(String.format("%02d-%02d-%02d", year, month+1, dayOfMonth));
+                        date.setText(String.format("%02d-%02d-%02d", dayOfMonth, month+1, year));
+                        homework.setDate(String.format("%02d-%02d-%02d", dayOfMonth, month+1, year));
                     }
                 }, mYear, mMonth, mdayofMonth);
                 datePickerDialog.setTitle(R.string.choose_date);
@@ -411,8 +411,8 @@ public class AlertDialogsHelper {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(activity, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        date.setText(String.format("%02d-%02d-%02d", year, month+1, dayOfMonth));
-                        homework.setDate(String.format("%02d-%02d-%02d", year, month+1, dayOfMonth));
+                        date.setText(String.format("%02d-%02d-%02d", dayOfMonth, month+1, year));
+                        homework.setDate(String.format("%02d-%02d-%02d", dayOfMonth, month+1, year));
                     }
                 }, mYear, mMonth, mdayofMonth);
                 datePickerDialog.setTitle(R.string.choose_date);

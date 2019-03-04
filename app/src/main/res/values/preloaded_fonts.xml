@@ -2,5 +2,8 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/artifika</item>
+        <item>@font/assistant_extralight</item>
+        <item>@font/homenaje</item>
+        <item>@font/junge</item>
     </array>
 </resources>
