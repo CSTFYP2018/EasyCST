@@ -72,7 +72,7 @@
             android:label="Settings"/>
         <activity
             android:name=".HomeworksActivity"
-            android:label="Assignments"
+            android:label="Assignment"
             android:parentActivityName=".Home"
             ></activity>
     </application>
