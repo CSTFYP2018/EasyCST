@@ -45,7 +45,7 @@ public class maintain extends AppCompatActivity {
     // Storing server url into String variable.
     String HttpUrl = "http://easycst.dx.am/maintain.php";
 
-    Boolean CheckEditText ;
+    Boolean CheckEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,19 +53,17 @@ public class maintain extends AppCompatActivity {
         setContentView(R.layout.activity_maintain);
 
         // Assigning ID's to EditText.
-        room1 =  findViewById(R.id.roomWrapper);
+        room1 = findViewById(R.id.roomWrapper);
 
-        phone1 =  findViewById(R.id.phoneWrapper);
+        phone1 = findViewById(R.id.phoneWrapper);
 
-       descript = findViewById(R.id.descript);
-       // desc = findViewById(R.id.descriptionWrapper);
+        descript = findViewById(R.id.descript);
+        // desc = findViewById(R.id.descriptionWrapper);
         //descript = findViewById(R.id.descript);
 
 
         // Assigning ID's to Button.
         Register = (Button) findViewById(R.id.submit);
-
-
 
 
         // Creating Volley newRequestQueue .
@@ -79,10 +77,9 @@ public class maintain extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CheckEditTextIsEmptyOrNot();
-                if(CheckEditText){
+                if (CheckEditText) {
                     MRegistration();
-                }
-                else {
+                } else {
                     Snackbar.make(view, "Please fill all fields ", Snackbar.LENGTH_SHORT).setAction("Action", null).show();
                 }
 
@@ -91,7 +88,7 @@ public class maintain extends AppCompatActivity {
 
     }
 
-    public void MRegistration(){
+    public void MRegistration() {
 
         // Showing progress dialog at user registration time.
         progressDialog.setMessage("Please Wait, We are Inserting Your Data on Server");
@@ -109,7 +106,7 @@ public class maintain extends AppCompatActivity {
                         // Showing Echo Response Message Coming From Server.
 
                         Toast.makeText(maintain.this, ServerResponse, Toast.LENGTH_LONG).show();
-                        if(ServerResponse.equals("Registration Successfull")){
+                        if (ServerResponse.equals("Maintenance Registration Successful")) {
                             startActivity(new Intent(maintain.this, Home.class));
                             finish();
                         }
@@ -123,7 +120,8 @@ public class maintain extends AppCompatActivity {
                         progressDialog.dismiss();
 
                         // Showing error message if something goes wrong.
-                        Toast.makeText(maintain.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(maintain.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(maintain.this, "Somthing is not Right Try again Later", Toast.LENGTH_LONG).show();
                         finish();
                     }
                 }) {
@@ -152,26 +150,25 @@ public class maintain extends AppCompatActivity {
     }
 
 
-    public void CheckEditTextIsEmptyOrNot(){
+    public void CheckEditTextIsEmptyOrNot() {
 
         // Getting values from EditText.
         RoomHolder = room1.getEditText().getText().toString().trim();
-        PhoneHolder= phone1.getEditText().getText().toString().trim();
+        PhoneHolder = phone1.getEditText().getText().toString().trim();
         //DescriptHolder = desc.getEditText().getText().toString().trim();
         DescriptHolder = descript.getText().toString().trim();
 
         Log.d("room1", RoomHolder);
-        Log.d("phone1",PhoneHolder);
+        Log.d("phone1", PhoneHolder);
         //Log.d("desc", DescriptHolder);
-        Log.d("descritp",DescriptHolder);
+        Log.d("descritp", DescriptHolder);
         // Checking whether EditText value is empty or not.
-        if(TextUtils.isEmpty(RoomHolder) || TextUtils.isEmpty(RoomHolder) || TextUtils.isEmpty(DescriptHolder)) {
+        if (TextUtils.isEmpty(RoomHolder) || TextUtils.isEmpty(RoomHolder) || TextUtils.isEmpty(DescriptHolder)) {
             // If any of EditText is empty then set variable value as False.
             CheckEditText = false;
-        }
-        else {
+        } else {
             // If any of EditText is filled then set variable value as True.
-            CheckEditText = true ;
+            CheckEditText = true;
         }
     }
 }

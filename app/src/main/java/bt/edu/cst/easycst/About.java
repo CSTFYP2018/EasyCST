@@ -1,76 +1,69 @@
 package bt.edu.cst.easycst;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.KeyEvent;
+import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
 public class About extends AppCompatActivity {
 
-    WebSettings webSettings;
-//    private GoogleApiClient client;
-    private WebView view;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        TextView version = (TextView) findViewById(R.id.version);
 
-        view = (WebView) this.findViewById(R.id.webView);
-        view.getSettings().setJavaScriptEnabled(true);
-        view.getSettings().setDomStorageEnabled(true);
-        view.setWebViewClient(new MyBrowser());
-        view.loadUrl("myData");
-        view.setWebChromeClient(new WebChromeClient()); // adding js alert
+        TextView tek = (TextView) findViewById(R.id.tek);
+        tek.setText(Html.fromHtml("<a href=\"mailto:teknathaofficial@gmail.com\">Tek Nath Acharya</a>"));
+        tek.setMovementMethod(LinkMovementMethod.getInstance());
 
+        TextView kf = (TextView) findViewById(R.id.kd);
+        kf.setText(Html.fromHtml("<a href=\"mailto:karmadorgey@gmail.com\">Karma Dorji</a>"));
+        kf.setMovementMethod(LinkMovementMethod.getInstance());
 
+        TextView de = (TextView) findViewById(R.id.de);
+        de.setText(Html.fromHtml("<a href=\"mailto:deepikasbr@gmail.com\">Deepika Suberi</a>"));
+        de.setMovementMethod(LinkMovementMethod.getInstance());
 
-        String htmlText = " %s ";
+        TextView kt = (TextView) findViewById(R.id.kt);
+        kt.setText(Html.fromHtml("<a href=\"mailto:kartse100@gmail.com\">Karma Tshewang</a>"));
+        kt.setMovementMethod(LinkMovementMethod.getInstance());
 
-        String myData = "<html><body style=\"text-align:justify\"><h2 align=\"center\">" +
-                "Version : 1.0</h2>" +
-                "<h2 align=\"center\">About App</h2>EasyCST is a platform for the student to have easy access to various services such as registration for maintenance services, " +
-                "self-tracking, adding and editing timetable and providing feedback for college.<br><br>" +
-                "<h2 align=\"center\">Developers </h2><a href =\"mailto: nathtek136@gmail.com\" style = \"text-decoration:none\">Tek Nath Acharya</a><br>" +
-                "         <a href =\"mailto: karmadorgey@gmail.com\" style = \"text-decoration:none\">Karma Dorji</a><br>" +
-                "        <a href =\"mailto: deepikasbr@gmail.com\" style = \"text-decoration:none\">Deepika Suberi</a><br>" +
-                "        <a href =\"mailto: kartse100@gmail.com\" style = \"text-decoration:none\"> Karma Tshewang</a><br>" +
-                "        <a href =\"mailto: parshuram.cst@rub.edu.bt\" style = \"text-decoration:none\">Parshuram Dhungyel (Guide)</body></html>";
+        TextView pr = (TextView) findViewById(R.id.pr);
+        pr.setText(Html.fromHtml("<a href=\"mailto:parshuram.cst@rub.edu.bt\">Parshu Ram Dhungyel (Guide)</a>"));
+        pr.setMovementMethod(LinkMovementMethod.getInstance());
 
-
-        view.loadData(String.format(htmlText,myData),"text/html","utf-8");
-    }
-    private class MyBrowser extends WebViewClient {
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            if (url.startsWith("tel:") || url.startsWith("sms:") || url.startsWith("smsto:") || url.startsWith("mailto:") || url.startsWith("mms:") || url.startsWith("mmsto:")) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        TextView lic = (TextView) findViewById(R.id.lic);
+        lic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(About.this, Libused.class);
                 startActivity(intent);
-//                return true;
             }
-            else {
-                view.loadUrl(url);
-            }
-            return true;
+        });
+
+        PackageManager manager = this.getPackageManager();
+        PackageInfo info = null;
+        try {
+            info = manager.getPackageInfo(this.getPackageName(), PackageManager.GET_ACTIVITIES);
+            version.setText("App version : "+info.versionCode);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
         }
     }
-   /* public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if ((keyCode == KeyEvent.KEYCODE_BACK) && view.canGoBack()) {
-            view.goBack(); //method goback()
-            return true;
-        }
-
-        return super.onKeyDown(keyCode, event);
-    }*/
 }

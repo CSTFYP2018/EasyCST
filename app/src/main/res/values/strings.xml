@@ -62,11 +62,6 @@
     <string name="time">Time</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
-    <string name="time_to_dialog">To:</string>
-    <string name="time_from_dialog">From:</string>
-    <string name="subject_dialog">Module:</string>
-    <string name="teacher_dialog">Tutor:</string>
-    <string name="room_dialog">Class:</string>
     <string name="select_color">Select color</string>
     <string name="choose_time">Choose time</string>
     <string name="choose_date">Choose date</string>
@@ -74,8 +69,6 @@
 
     <!-- Homeworks Activity strings -->
     <string name="select_date">Select date</string>
-    <string name="deadline_dialog">Deadline:</string>
-    <string name="description_dialog">Description:</string>
     <string name="desctiption">Desctiption</string>
     <string name="edit_homework">Edit Assignment</string>
     <string name="add_homework">Add Assignment</string>

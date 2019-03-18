@@ -68,4 +68,9 @@ public class Attendance extends AppCompatActivity {
         db.close();
         super.onDestroy();
     }
+    //@Override
+    //public void onBackPressed(){//IMPLEMENTED TO GO TO HOME ON BACK PRESS
+        //Intent intent = new Intent(Attendance.this, Home.class);
+        //startActivity(intent);
+    //}
 }

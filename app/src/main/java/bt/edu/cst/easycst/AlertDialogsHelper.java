@@ -18,20 +18,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-import bt.edu.cst.easycst.FragmentsTabAdapter;
-import bt.edu.cst.easycst.HomeworksAdapter;
-import bt.edu.cst.easycst.WeekAdapter;
-import bt.edu.cst.easycst.Homework;
-import bt.edu.cst.easycst.Week;
-import bt.edu.cst.easycst.R;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import petrov.kristiyan.colorpicker.ColorPicker;
+
 /**
  * Created by Tek Nath Acharya nathtek136@gmail.com
  * for Easy CST app
@@ -63,8 +58,8 @@ public class AlertDialogsHelper {
             @Override
             public void onClick(View v) {
                 final Calendar c = Calendar.getInstance();
-                int mHour = c.get(Calendar.HOUR_OF_DAY);
-                int mMinute = c.get(Calendar.MINUTE);
+                int mHour = 12;//c.get(Calendar.HOUR_OF_DAY);
+                int mMinute = 00;//c.get(Calendar.MINUTE);
                 TimePickerDialog timePickerDialog = new TimePickerDialog(activity,
                         new TimePickerDialog.OnTimeSetListener() {
 
@@ -81,12 +76,11 @@ public class AlertDialogsHelper {
         });
 
         to_time.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 final Calendar c = Calendar.getInstance();
-                int hour = c.get(Calendar.HOUR_OF_DAY);
-                int minute = c.get(Calendar.MINUTE);
+                int hour = 12;//c.get(Calendar.HOUR_OF_DAY);
+                int minute = 00;//c.get(Calendar.MINUTE);
                 TimePickerDialog timePickerDialog = new TimePickerDialog(activity,
                         new TimePickerDialog.OnTimeSetListener() {
 
@@ -110,12 +104,12 @@ public class AlertDialogsHelper {
                 colorPicker.show();
                 colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
                     @Override
-                    public void onChooseColor(int position,int color) {
+                    public void onChooseColor(int position, int color) {
                         select_color.setBackgroundColor(color != 0 ? color : Color.WHITE);
                     }
 
                     @Override
-                    public void onCancel(){
+                    public void onCancel() {
                     }
                 });
             }
@@ -140,14 +134,14 @@ public class AlertDialogsHelper {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(TextUtils.isEmpty(subject.getText()) || TextUtils.isEmpty(teacher.getText()) || TextUtils.isEmpty(room.getText())) {
+                if (TextUtils.isEmpty(subject.getText()) || TextUtils.isEmpty(teacher.getText()) || TextUtils.isEmpty(room.getText())) {
                     for (Map.Entry<Integer, EditText> entry : editTextHashs.entrySet()) {
-                        if(TextUtils.isEmpty(entry.getValue().getText())) {
+                        if (TextUtils.isEmpty(entry.getValue().getText())) {
                             entry.getValue().setError(activity.getResources().getString(entry.getKey()) + " " + activity.getResources().getString(R.string.field_error));
                             entry.getValue().requestFocus();
                         }
                     }
-                } else if(!from_time.getText().toString().matches(".*\\d+.*") || !to_time.getText().toString().matches(".*\\d+.*")) {
+                } else if (!from_time.getText().toString().matches(".*\\d+.*") || !to_time.getText().toString().matches(".*\\d+.*")) {
                     Snackbar.make(alertLayout, R.string.time_error, Snackbar.LENGTH_LONG).show();
                 } else {
                     DbHelper db = new DbHelper(activity);
@@ -182,8 +176,8 @@ public class AlertDialogsHelper {
             @Override
             public void onClick(View v) {
                 final Calendar c = Calendar.getInstance();
-                int mHour = c.get(Calendar.HOUR_OF_DAY);
-                int mMinute = c.get(Calendar.MINUTE);
+                int mHour = 12;//c.get(Calendar.HOUR_OF_DAY);
+                int mMinute = 00; //c.get(Calendar.MINUTE);
                 TimePickerDialog timePickerDialog = new TimePickerDialog(activity,
                         new TimePickerDialog.OnTimeSetListener() {
 
@@ -195,14 +189,16 @@ public class AlertDialogsHelper {
                             }
                         }, mHour, mMinute, true);
                 timePickerDialog.setTitle(R.string.choose_time);
-                timePickerDialog.show(); }});
+                timePickerDialog.show();
+            }
+        });
 
         to_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final Calendar c = Calendar.getInstance();
-                int hour = c.get(Calendar.HOUR_OF_DAY);
-                int minute = c.get(Calendar.MINUTE);
+                int hour = 12;//c.get(Calendar.HOUR_OF_DAY);
+                int minute = 00; //c.get(Calendar.MINUTE);
                 TimePickerDialog timePickerDialog = new TimePickerDialog(activity,
                         new TimePickerDialog.OnTimeSetListener() {
 
@@ -227,12 +223,12 @@ public class AlertDialogsHelper {
                 colorPicker.show();
                 colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
                     @Override
-                    public void onChooseColor(int position,int color) {
+                    public void onChooseColor(int position, int color) {
                         select_color.setBackgroundColor(color != 0 ? color : Color.WHITE);
                     }
 
                     @Override
-                    public void onCancel(){
+                    public void onCancel() {
                     }
                 });
             }
@@ -263,14 +259,14 @@ public class AlertDialogsHelper {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(TextUtils.isEmpty(subject.getText()) || TextUtils.isEmpty(teacher.getText()) || TextUtils.isEmpty(room.getText())) {
+                if (TextUtils.isEmpty(subject.getText()) || TextUtils.isEmpty(teacher.getText()) || TextUtils.isEmpty(room.getText())) {
                     for (Map.Entry<Integer, EditText> entry : editTextHashs.entrySet()) {
-                        if(TextUtils.isEmpty(entry.getValue().getText())) {
+                        if (TextUtils.isEmpty(entry.getValue().getText())) {
                             entry.getValue().setError(activity.getResources().getString(entry.getKey()) + " " + activity.getResources().getString(R.string.field_error));
                             entry.getValue().requestFocus();
                         }
                     }
-                } else if(!from_time.getText().toString().matches(".*\\d+.*") || !to_time.getText().toString().matches(".*\\d+.*")) {
+                } else if (!from_time.getText().toString().matches(".*\\d+.*") || !to_time.getText().toString().matches(".*\\d+.*")) {
                     Snackbar.make(alertLayout, R.string.time_error, Snackbar.LENGTH_LONG).show();
                 } else {
                     DbHelper dbHelper = new DbHelper(activity);
@@ -317,12 +313,12 @@ public class AlertDialogsHelper {
                 final Calendar calendar = Calendar.getInstance();
                 int mYear = calendar.get(Calendar.YEAR);
                 int mMonth = calendar.get(Calendar.MONTH);
-                int mdayofMonth = calendar.get(Calendar.DAY_OF_MONTH);
+                int mdayofMonth = calendar.get(Calendar.DAY_OF_MONTH)+7;
                 DatePickerDialog datePickerDialog = new DatePickerDialog(activity, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        date.setText(String.format("%02d-%02d-%02d", year, month+1, dayOfMonth));
-                        homework.setDate(String.format("%02d-%02d-%02d", year, month+1, dayOfMonth));
+                        date.setText(String.format("%02d-%02d-%02d", dayOfMonth, month + 1, year));
+                        homework.setDate(String.format("%02d-%02d-%02d", dayOfMonth, month + 1, year));
                     }
                 }, mYear, mMonth, mdayofMonth);
                 datePickerDialog.setTitle(R.string.choose_date);
@@ -338,12 +334,12 @@ public class AlertDialogsHelper {
                 colorPicker.show();
                 colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
                     @Override
-                    public void onChooseColor(int position,int color) {
+                    public void onChooseColor(int position, int color) {
                         select_color.setBackgroundColor(color != 0 ? color : Color.WHITE);
                     }
 
                     @Override
-                    public void onCancel(){
+                    public void onCancel() {
                     }
                 });
             }
@@ -408,12 +404,12 @@ public class AlertDialogsHelper {
                 final Calendar calendar = Calendar.getInstance();
                 int mYear = calendar.get(Calendar.YEAR);
                 int mMonth = calendar.get(Calendar.MONTH);
-                int mdayofMonth = calendar.get(Calendar.DAY_OF_MONTH);
+                int mdayofMonth = calendar.get(Calendar.DAY_OF_MONTH)+7;
                 DatePickerDialog datePickerDialog = new DatePickerDialog(activity, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        date.setText(String.format("%02d-%02d-%02d", year, month+1, dayOfMonth));
-                        homework.setDate(String.format("%02d-%02d-%02d", year, month+1, dayOfMonth));
+                        date.setText(String.format("%02d-%02d-%02d", dayOfMonth, month + 1, year));
+                        homework.setDate(String.format("%02d-%02d-%02d", dayOfMonth, month + 1, year));
                     }
                 }, mYear, mMonth, mdayofMonth);
                 datePickerDialog.setTitle(R.string.choose_date);
@@ -429,12 +425,12 @@ public class AlertDialogsHelper {
                 colorPicker.show();
                 colorPicker.setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
                     @Override
-                    public void onChooseColor(int position,int color) {
+                    public void onChooseColor(int position, int color) {
                         select_color.setBackgroundColor(color != 0 ? color : Color.WHITE);
                     }
 
                     @Override
-                    public void onCancel(){
+                    public void onCancel() {
                     }
                 });
             }
@@ -465,14 +461,14 @@ public class AlertDialogsHelper {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(TextUtils.isEmpty(subject.getText()) || TextUtils.isEmpty(description.getText())) {
+                if (TextUtils.isEmpty(subject.getText()) || TextUtils.isEmpty(description.getText())) {
                     for (Map.Entry<Integer, EditText> editText : editTextHashs.entrySet()) {
-                        if(TextUtils.isEmpty(editText.getValue().getText())) {
+                        if (TextUtils.isEmpty(editText.getValue().getText())) {
                             editText.getValue().setError(activity.getResources().getString(editText.getKey()) + " " + activity.getResources().getString(R.string.field_error));
                             editText.getValue().requestFocus();
                         }
                     }
-                } else if(!date.getText().toString().matches(".*\\d+.*")) {
+                } else if (!date.getText().toString().matches(".*\\d+.*")) {
                     Snackbar.make(alertLayout, R.string.deadline_snackbar, Snackbar.LENGTH_LONG).show();
                 } else {
                     DbHelper dbHelper = new DbHelper(activity);

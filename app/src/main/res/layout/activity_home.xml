@@ -92,7 +92,7 @@
                 android:textColor="@android:color/black" />
 
             <TextView
-                android:id="@+id/tt"
+                android:id="@+id/tim"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.33"
