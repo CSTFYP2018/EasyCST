@@ -59,6 +59,7 @@
             android:id="@+id/submit"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:background="@color/buttoncolor"
             android:layout_marginTop="20dp"
             android:text="@string/submit" />
     </LinearLayout>
