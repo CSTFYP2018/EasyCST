@@ -58,21 +58,21 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/gridImageSize"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/maintanance" />
+                app:srcCompat="@drawable/maintain2" />
 
             <ImageView
                 android:id="@+id/timetable"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/gridImageSize"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/time_table" />
+                app:srcCompat="@drawable/timetable" />
 
             <ImageView
                 android:id="@+id/attendance"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/gridImageSize"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/attendance" />
+                app:srcCompat="@drawable/attain" />
 
         </TableRow>
 
@@ -130,14 +130,14 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/gridImageSize"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/feedback" />
+                app:srcCompat="@drawable/feedbacks" />
 
             <ImageView
                 android:id="@+id/about"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/gridImageSize"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/about" />
+                app:srcCompat="@drawable/info" />
 
         </TableRow>
 
@@ -187,21 +187,21 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/gridImageSize"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/share" />
+                app:srcCompat="@drawable/shares" />
 
             <ImageView
                 android:id="@+id/rate"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/gridImageSize"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rate" />
+                app:srcCompat="@drawable/rates" />
 
             <ImageView
                 android:id="@+id/help"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/gridImageSize"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/help" />
+                app:srcCompat="@drawable/helps" />
 
         </TableRow>
 

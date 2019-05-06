@@ -2,6 +2,7 @@ package bt.edu.cst.easycst;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -20,11 +21,14 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.getkeepsafe.taptargetview.TapTarget;
+import com.getkeepsafe.taptargetview.TapTargetView;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class maintain extends AppCompatActivity {
+    static boolean executed = true;
     // Creating EditText.
     EditText room, phone, descript;
     private TextInputLayout room1, phone1, desc;
@@ -43,7 +47,7 @@ public class maintain extends AppCompatActivity {
     ProgressDialog progressDialog;
 
     // Storing server url into String variable.
-    String HttpUrl = "http://easycst.dx.am/maintain.php";
+    String HttpUrl = "http://10.2.2.89:8000/api/getmaintenance";
 
     Boolean CheckEditText;
 
@@ -63,7 +67,7 @@ public class maintain extends AppCompatActivity {
 
 
         // Assigning ID's to Button.
-        Register = (Button) findViewById(R.id.submit);
+        Register = findViewById(R.id.submit);
 
 
         // Creating Volley newRequestQueue .
@@ -86,12 +90,31 @@ public class maintain extends AppCompatActivity {
             }
         });
 
+        /*if (executed) {
+            TapTargetView.showFor(this,                 // `this` is an Activity
+                    TapTarget.forView(findViewById(R.id.submit), "Maintenance Registration", "Fill all fields and click submit to register for maintenance.")
+                            .tintTarget(true)                   // Whether to tint the target view's color
+                            .transparentTarget(true)           // Specify whether the target is transparent (displays the content underneath)
+                            //.icon(R.drawable.about)                     // Specify a custom drawable to draw as the target
+                            .targetRadius(50),                  // Specify the target radius (in dp)
+                    new TapTargetView.Listener() {          // The listener can listen for regular clicks, long clicks or cancels
+                        @Override
+                        public void onTargetClick(TapTargetView view) {
+                            super.onTargetClick(view);      // This call is optional
+                            view.dismiss(true);
+                        }
+                    });
+            executed=false;
+        }*/
+
+
     }
+
 
     public void MRegistration() {
 
         // Showing progress dialog at user registration time.
-        progressDialog.setMessage("Please Wait, We are Inserting Your Data on Server");
+        progressDialog.setMessage("Please Wait, While we process your request...");
         progressDialog.show();
 
         // Creating string request with post method.
@@ -106,10 +129,10 @@ public class maintain extends AppCompatActivity {
                         // Showing Echo Response Message Coming From Server.
 
                         Toast.makeText(maintain.this, ServerResponse, Toast.LENGTH_LONG).show();
-                        if (ServerResponse.equals("Maintenance Registration Successful")) {
+                        //if (ServerResponse.equals("Registration Successful")) {
                             startActivity(new Intent(maintain.this, Home.class));
                             finish();
-                        }
+                        //}
                     }
                 },
                 new Response.ErrorListener() {
@@ -163,12 +186,6 @@ public class maintain extends AppCompatActivity {
         //Log.d("desc", DescriptHolder);
         Log.d("descritp", DescriptHolder);
         // Checking whether EditText value is empty or not.
-        if (TextUtils.isEmpty(RoomHolder) || TextUtils.isEmpty(RoomHolder) || TextUtils.isEmpty(DescriptHolder)) {
-            // If any of EditText is empty then set variable value as False.
-            CheckEditText = false;
-        } else {
-            // If any of EditText is filled then set variable value as True.
-            CheckEditText = true;
-        }
+        CheckEditText = !TextUtils.isEmpty(RoomHolder) && !TextUtils.isEmpty(RoomHolder) && !TextUtils.isEmpty(DescriptHolder);
     }
 }

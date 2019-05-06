@@ -9,9 +9,6 @@
     android:orientation="vertical"
     tools:context=".Feedback">
 
-
-
-
     <EditText
         android:layout_marginTop="30dp"
         android:id="@+id/feedback"
@@ -24,7 +21,7 @@
         android:layout_marginTop="20dp"
         android:id="@+id/submit"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@color/buttoncolor"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
         android:text="@string/submit" />
 </LinearLayout>

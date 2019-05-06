@@ -1,17 +1,15 @@
 package bt.edu.cst.easycst;
 
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Home extends AppCompatActivity {
+    static boolean executed=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,24 +17,24 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        ImageView maintain = (ImageView) findViewById(R.id.maintain);
-        TextView mai = (TextView) findViewById(R.id.mai);
-        TextView tim = (TextView) findViewById(R.id.tim);
-        TextView rat = (TextView) findViewById(R.id.rat);
-        TextView fee = (TextView) findViewById(R.id.fee);
-        TextView att = (TextView) findViewById(R.id.att);
-        TextView ass = (TextView) findViewById(R.id.ass);
-        TextView abo = (TextView) findViewById(R.id.abo);
-        TextView sha = (TextView) findViewById(R.id.sha);
-        TextView hel = (TextView) findViewById(R.id.hel);
-        ImageView about = (ImageView) findViewById(R.id.about);
-        ImageView feedback = (ImageView) findViewById(R.id.feedback);
-        ImageView attendance = (ImageView) findViewById(R.id.attendance);
-        ImageView rate = (ImageView) findViewById(R.id.rate);
-        ImageView share = (ImageView) findViewById(R.id.share);
-        ImageView football = (ImageView) findViewById(R.id.football);
-        ImageView help = (ImageView) findViewById(R.id.help);
-        ImageView timetable = (ImageView) findViewById(R.id.timetable);
+        ImageView maintain = findViewById(R.id.maintain);
+        TextView mai = findViewById(R.id.mai);
+        TextView tim = findViewById(R.id.tim);
+        TextView rat = findViewById(R.id.rat);
+        TextView fee = findViewById(R.id.fee);
+        TextView att = findViewById(R.id.att);
+        TextView ass = findViewById(R.id.ass);
+        TextView abo = findViewById(R.id.abo);
+        TextView sha = findViewById(R.id.sha);
+        TextView hel = findViewById(R.id.hel);
+        ImageView about = findViewById(R.id.about);
+        ImageView feedback = findViewById(R.id.feedback);
+        ImageView attendance = findViewById(R.id.attendance);
+        ImageView rate = findViewById(R.id.rate);
+        ImageView share = findViewById(R.id.share);
+        ImageView football = findViewById(R.id.football);
+        ImageView help = findViewById(R.id.help);
+        ImageView timetable = findViewById(R.id.timetable);
 
         ////////////////////////////////////////
         maintain.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +71,8 @@ public class Home extends AppCompatActivity {
         rate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=PackageName")));
+                final String appPackageName = getPackageName();
+                startActivity(new Intent(Intent.ACTION_VIEW,  Uri.parse("market://details?id=" + appPackageName)));
             }
         });
         rat.setOnClickListener(new View.OnClickListener() {
@@ -183,10 +182,10 @@ public class Home extends AppCompatActivity {
         help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this, Help.class);
+                Intent intent = new Intent(Home.this, Login.class);
                 startActivity(intent);
             }
-        });
+        });/*
         hel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -194,6 +193,22 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+       if (executed) {
+            TapTargetView.showFor(this,                 // `this` is an Activity
+                    TapTarget.forView(findViewById(R.id.attendance), "Attendance Tracking", "You can manage and track your attendance here.")
+                            .tintTarget(true)                   // Whether to tint the target view's color
+                            .transparentTarget(true)           // Specify whether the target is transparent (displays the content underneath)
+                            //.icon(R.drawable.about)                     // Specify a custom drawable to draw as the target
+                            .targetRadius(50),                  // Specify the target radius (in dp)
+                    new TapTargetView.Listener() {          // The listener can listen for regular clicks, long clicks or cancels
+                        @Override
+                        public void onTargetClick(TapTargetView view) {
+                            super.onTargetClick(view);      // This call is optional
+                            view.dismiss(true);
+                        }
+                    });
+            executed=false;
+        }*/
 
     }
 }

@@ -1,66 +1,71 @@
 package bt.edu.cst.easycst;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.widget.Adapter;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.util.Log;
 
-public class Help extends AppCompatActivity {
+/*import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
+import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
+import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
+import com.shockwave.pdfium.PdfDocument;*/
 
+import java.util.List;
+
+public class Help extends Activity {}/*implements OnPageChangeListener, OnLoadCompleteListener
+    private static final String TAG = Help.class.getSimpleName();
+    public static final String SAMPLE_FILE = "tutorial.pdf";
+    PDFView pdfView;
+    Integer pageNumber = 0;
+    String pdfFileName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
 
-         final String[] descriptionList = {"Company's Address....", "Home Address....", "Contact no...."};
 
-        Adapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, descriptionList);
+        pdfView = (PDFView) findViewById(R.id.pdfView);
+        displayFromAsset(SAMPLE_FILE);
+    }
 
-         final TextView textView =(TextView)findViewById(R.id.textviewA);
+    private void displayFromAsset(String assetFileName) {
+        pdfFileName = assetFileName;
 
-        ListView listView = (ListView) findViewById(R.id.listId);
+        pdfView.fromAsset(SAMPLE_FILE)
+                .defaultPage(pageNumber)
+                .enableSwipe(true)
+                .swipeHorizontal(false)
+                .onPageChange(this)
+                .enableAnnotationRendering(true)
+                .onLoad(this)
+                .scrollHandle(new DefaultScrollHandle(this))
+                .load();
+    }
 
-        listView.setAdapter((ListAdapter) adapter);
+    @Override
+    public void onPageChanged(int page, int pageCount) {
+        pageNumber = page;
+        setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
+    }
 
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-//                String listPosition = descriptionList[position];
-//                Toast.makeText(MainActivity .this, listPosition , Toast.LENGTH_LONG).show();
-//            }
-//        });
 
-//        listView.setOnItemClickListener( new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                textView.setText(descriptionList.getTag(position));
-//            } } );
-
-//        listView.setOnItemClickListener(
-//
-//                new AdapterView.OnItemClickListener() {
-//
-//                    @Override
-//                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                        String listPosition = String.valueOf(parent.getItemAtPosition(position));
-//                        /*after clicking the first row of the list show the following info :
-//                        NAME: Some name
-//                        ADDRESS: Somewhere
-//                         */
-//                    }
-//                }
-//        );
-
+    @Override
+    public void loadComplete(int nbPages) {
+        PdfDocument.Meta meta = pdfView.getDocumentMeta();
+        printBookmarksTree(pdfView.getTableOfContents(), "-");
 
     }
 
-}
+    public void printBookmarksTree(List<PdfDocument.Bookmark> tree, String sep) {
+        for (PdfDocument.Bookmark b : tree) {
+
+            Log.e(TAG, String.format("%s %s, p %d", sep, b.getTitle(), b.getPageIdx()));
+
+            if (b.hasChildren()) {
+                printBookmarksTree(b.getChildren(), sep + "-");
+            }
+        }
+    }
+
+}*/

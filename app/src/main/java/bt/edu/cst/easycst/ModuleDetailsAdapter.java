@@ -159,13 +159,13 @@ public class ModuleDetailsAdapter extends RecyclerView.Adapter<ModuleDetailsAdap
 
         public ModuleViewHolder( @NonNull View itemView) {
             super(itemView);
-            tvName = (TextView) itemView.findViewById(R.id.mcoded);
-            tvAddress = (TextView) itemView.findViewById(R.id.mnamed);
-            tvPhone = (TextView) itemView.findViewById(R.id.mtutord);
-            tvProfession = (TextView) itemView.findViewById(R.id.mabsentd);
-            ivMenu = (ImageButton) itemView.findViewById(R.id.iv_menu);
-            plusbutton = (Button) itemView.findViewById(R.id.absentplus);
-            minusbutton = (Button) itemView.findViewById(R.id.absentminus);
+            tvName = itemView.findViewById(R.id.mcoded);
+            tvAddress = itemView.findViewById(R.id.mnamed);
+            tvPhone = itemView.findViewById(R.id.mtutord);
+            tvProfession = itemView.findViewById(R.id.mabsentd);
+            ivMenu = itemView.findViewById(R.id.iv_menu);
+            plusbutton = itemView.findViewById(R.id.absentplus);
+            minusbutton = itemView.findViewById(R.id.absentminus);
 
 
         }

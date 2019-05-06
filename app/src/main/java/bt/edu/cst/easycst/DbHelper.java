@@ -5,10 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import bt.edu.cst.easycst.Homework;
-import bt.edu.cst.easycst.Week;
-
 import java.util.ArrayList;
 /**
  * Created by Tek Nath Acharya nathtek136@gmail.com

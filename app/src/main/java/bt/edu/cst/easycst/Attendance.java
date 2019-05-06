@@ -31,7 +31,7 @@ public class Attendance extends AppCompatActivity {
 
         dbHelper = new ModuleDatabaseHelper(this);
         db = dbHelper.getReadableDatabase();
-        recyclerView = (RecyclerView) findViewById(R.id.modules);
+        recyclerView = findViewById(R.id.modules);
 
         addmodule = findViewById(R.id.addmodule);
         addmodule.setOnClickListener(new View.OnClickListener() {

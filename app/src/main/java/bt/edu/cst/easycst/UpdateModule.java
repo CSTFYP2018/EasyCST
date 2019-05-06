@@ -27,10 +27,10 @@ public class UpdateModule extends AppCompatActivity {
         setContentView(R.layout.activity_update_module);
         dbHelper = new ModuleDatabaseHelper(this);
         db = dbHelper.getWritableDatabase();
-        mcode = (EditText) findViewById(R.id.updatemcode);
-        mname = (EditText) findViewById(R.id.updatemname);
-        mtutor = (EditText) findViewById(R.id.updatemtutor);
-        btUpdate = (Button) findViewById(R.id.updatesave);
+        mcode = findViewById(R.id.updatemcode);
+        mname = findViewById(R.id.updatemname);
+        mtutor = findViewById(R.id.updatemtutor);
+        btUpdate = findViewById(R.id.updatesave);
 
         final int rowId = getIntent().getIntExtra("MID", -1);
 

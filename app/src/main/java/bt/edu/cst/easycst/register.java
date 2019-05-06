@@ -71,15 +71,15 @@ public class register extends AppCompatActivity {
 
         uid = findViewById(R.id.uidWrapper);
 
-        gender = (RadioGroup) findViewById(R.id.gender);
+        gender = findViewById(R.id.gender);
 
-        spinners=(Spinner) findViewById(R.id.spinner);
+        spinners= findViewById(R.id.spinner);
 
         // Assigning ID's to Button.
-        Register = (Button) findViewById(R.id.regButton);
+        Register = findViewById(R.id.regButton);
 
         //Creating Spinner
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        Spinner spinner = findViewById(R.id.spinner);
         List<String> departments = new ArrayList<String>();
         departments.add("Civil Engg. and Architecture Department");
         departments.add("Electrical Engg Department");
@@ -212,7 +212,7 @@ public class register extends AppCompatActivity {
             }
             else{
                 CheckEditText = false;
-                EditText myEditText = (EditText)findViewById(R.id.regemail);
+                EditText myEditText = findViewById(R.id.regemail);
                 //myEditText.setTextColor(Color.RED);
                 myEditText.setText("");
                 myEditText.setHintTextColor(Color.RED);

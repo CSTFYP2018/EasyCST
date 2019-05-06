@@ -12,7 +12,7 @@ import bt.edu.cst.easycst.ModuleDatabaseContract.ModuleDatabase;
 public class ModuleDatabaseHelper extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "module.db";
+    public static final String DATABASE_NAME = "moduledb";
     public ModuleDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }

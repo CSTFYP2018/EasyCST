@@ -26,29 +26,29 @@ public class About extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        TextView version = (TextView) findViewById(R.id.version);
+        TextView version = findViewById(R.id.version);
 
-        TextView tek = (TextView) findViewById(R.id.tek);
+        TextView tek = findViewById(R.id.tek);
         tek.setText(Html.fromHtml("<a href=\"mailto:teknathaofficial@gmail.com\">Tek Nath Acharya</a>"));
         tek.setMovementMethod(LinkMovementMethod.getInstance());
 
-        TextView kf = (TextView) findViewById(R.id.kd);
+        TextView kf = findViewById(R.id.kd);
         kf.setText(Html.fromHtml("<a href=\"mailto:karmadorgey@gmail.com\">Karma Dorji</a>"));
         kf.setMovementMethod(LinkMovementMethod.getInstance());
 
-        TextView de = (TextView) findViewById(R.id.de);
+        TextView de = findViewById(R.id.de);
         de.setText(Html.fromHtml("<a href=\"mailto:deepikasbr@gmail.com\">Deepika Suberi</a>"));
         de.setMovementMethod(LinkMovementMethod.getInstance());
 
-        TextView kt = (TextView) findViewById(R.id.kt);
+        TextView kt = findViewById(R.id.kt);
         kt.setText(Html.fromHtml("<a href=\"mailto:kartse100@gmail.com\">Karma Tshewang</a>"));
         kt.setMovementMethod(LinkMovementMethod.getInstance());
 
-        TextView pr = (TextView) findViewById(R.id.pr);
+        TextView pr = findViewById(R.id.pr);
         pr.setText(Html.fromHtml("<a href=\"mailto:parshuram.cst@rub.edu.bt\">Parshu Ram Dhungyel (Guide)</a>"));
         pr.setMovementMethod(LinkMovementMethod.getInstance());
 
-        TextView lic = (TextView) findViewById(R.id.lic);
+        TextView lic = findViewById(R.id.lic);
         lic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -19,13 +19,13 @@ public class SplashActivity extends AppCompatActivity {
         Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
                 .getBoolean("isFirstRun", true);
 
-        if (isFirstRun) {
+        /*if (isFirstRun) {
             //show start activity
 
             startActivity(new Intent(SplashActivity.this, register.class));
             Toast.makeText(SplashActivity.this, "First Run", Toast.LENGTH_LONG)
                     .show();
-        }
+        }*/
 
 
         getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()

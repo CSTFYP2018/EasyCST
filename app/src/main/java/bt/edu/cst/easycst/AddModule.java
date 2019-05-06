@@ -37,10 +37,10 @@ public class AddModule extends AppCompatActivity {
 
         db = dbHelper.getWritableDatabase();
 
-        mcode = (EditText) findViewById(R.id.mcode);
-        mname = (EditText) findViewById(R.id.mname);
-        mtutor = (EditText) findViewById(R.id.mtutor);
-        save = (Button) findViewById(R.id.save);
+        mcode = findViewById(R.id.mcode);
+        mname = findViewById(R.id.mname);
+        mtutor = findViewById(R.id.mtutor);
+        save = findViewById(R.id.save);
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +52,7 @@ public class AddModule extends AppCompatActivity {
                 if (mcodes.equals("") || mnames.equals("") || mtutors.equals("")) {
                     //Snackbar.make(view, "Please fill all fields", Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
-                    ScrollView coordinatorLayout=(ScrollView) findViewById(R.id.content);
+                    ScrollView coordinatorLayout= findViewById(R.id.content);
                     Snackbar snackbar = Snackbar.make(coordinatorLayout, "Please fill all fields", Snackbar.LENGTH_LONG);
                     View h = snackbar.getView();
                     h.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
