@@ -81,10 +81,13 @@ public class register extends AppCompatActivity {
         //Creating Spinner
         Spinner spinner = findViewById(R.id.spinner);
         List<String> departments = new ArrayList<String>();
-        departments.add("Civil Engg. and Architecture Department");
-        departments.add("Electrical Engg Department");
-        departments.add("Electronics and Communication Department");
-        departments.add("Information Technology Department");
+        departments.add("BE in Civil Engineering");
+        departments.add("BA in Architecture");
+        departments.add("BE in Electrical Engineering");
+        departments.add("BE in Electronics and Communication Engineering");
+        departments.add("BE in Information Technology Engineering");
+        departments.add("BE in Instrumentation and Control Engineering");
+        departments.add("BE in Engineering Geology");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,departments);
         spinner.setPrompt("Department");
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

@@ -90,29 +90,9 @@ public class maintain extends AppCompatActivity {
             }
         });
 
-        /*if (executed) {
-            TapTargetView.showFor(this,                 // `this` is an Activity
-                    TapTarget.forView(findViewById(R.id.submit), "Maintenance Registration", "Fill all fields and click submit to register for maintenance.")
-                            .tintTarget(true)                   // Whether to tint the target view's color
-                            .transparentTarget(true)           // Specify whether the target is transparent (displays the content underneath)
-                            //.icon(R.drawable.about)                     // Specify a custom drawable to draw as the target
-                            .targetRadius(50),                  // Specify the target radius (in dp)
-                    new TapTargetView.Listener() {          // The listener can listen for regular clicks, long clicks or cancels
-                        @Override
-                        public void onTargetClick(TapTargetView view) {
-                            super.onTargetClick(view);      // This call is optional
-                            view.dismiss(true);
-                        }
-                    });
-            executed=false;
-        }*/
-
-
     }
 
-
     public void MRegistration() {
-
         // Showing progress dialog at user registration time.
         progressDialog.setMessage("Please Wait, While we process your request...");
         progressDialog.show();
