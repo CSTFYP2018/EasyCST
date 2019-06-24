@@ -57,7 +57,7 @@
 
     <!-- Homeworks Activity strings -->
     <string name="select_date">Select date</string>
-    <string name="desctiption">Desctiption</string>
+    <string name="desctiption">Description</string>
     <string name="edit_homework">Edit Assignment</string>
     <string name="add_homework">Add Assignment</string>
     <string name="deadline_snackbar">"Deadline field can not be empty!</string>
@@ -70,6 +70,12 @@
     <string name="time_from">From</string>
     <string name="time_to">Till</string>
     <string name="classr">Class Room</string>
+    <string name="help_maintenance">This allows you to register for maintenance of your room. Provide your number along with description of problem you are facing and your phone number for MC to call if any clarification needed.</string>
+    <string name="help_timetable">This feature allows you to easily record your class timetable for every day use. Fill all required text boxes and set from and till time. You can edit it later if you have any changes.</string>
+    <string name="help_attendance">This feature allows you to track your own attendance. First you have to enter all the modules that you have and whenever you miss a class you can just need increase the count by pressing "\+"\ button.</string>
+    <string name="help_assignment">Assignment allows you to record and track all assignments and home works that you have</string>
+    <string name="help_feedback">Feedback allows you to provide completely anonymous feedback and any suggestions to the college.</string>
+    <string name="description_about">Easy CST is a platform for students to have easy access to various services such as registration for maintenance, self attendance tracking, timetable viewing, assignment tracking and providing feedback to the college</string>
 
 
     <!--Time Table and HomeWork Strings -->

@@ -182,17 +182,17 @@ public class Home extends AppCompatActivity {
         help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this, Login.class);
+                Intent intent = new Intent(Home.this, Help.class);
                 startActivity(intent);
             }
-        });/*
+        });
         hel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Home.this, Help.class);
                 startActivity(intent);
             }
-        });
+        });/*
        if (executed) {
             TapTargetView.showFor(this,                 // `this` is an Activity
                     TapTarget.forView(findViewById(R.id.attendance), "Attendance Tracking", "You can manage and track your attendance here.")

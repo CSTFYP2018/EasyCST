@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollView4"
     android:layout_width="match_parent"
@@ -8,27 +7,81 @@
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:background="#FFFFFF"
-    tools:context=".About">
+    tools:context=".Help">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/version"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:textAlignment="center"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp" />
+
         <TextView
             android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:textStyle="bold"
-            android:text="About App" />
+            android:text="Maintenance" />
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/h1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:text="@string/help_maintenance" />
+        <TextView
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:text="Time Table" />
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/h2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:text="@string/help_timetable" />
+        <TextView
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:text="Attendance" />
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/h3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:text="@string/help_attendance" />
+        <TextView
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:text="Assignment" />
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/h4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:text="@string/help_assignment" />
+        <TextView
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:text="Feedback" />
 
         <TextView
             android:textAlignment="center"
@@ -36,52 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            android:text="@string/description_about" />
-        <TextView
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:text="Developers"
-            android:textStyle="bold" />
+            android:text="@string/help_feedback" />
 
-
-        <TextView
-            android:id="@+id/kd"
-            android:layout_marginTop="10dp"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-        <TextView
-            android:id="@+id/de"
-            android:textAlignment="center"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-        <TextView
-            android:id="@+id/kt"
-            android:textAlignment="center"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-        <TextView
-            android:id="@+id/tek"
-            android:layout_marginTop="10dp"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-        <TextView
-            android:id="@+id/pr"
-            android:layout_marginTop="10dp"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-        <TextView
-            android:id="@+id/lic"
-            android:layout_marginTop="20dp"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:text="Open-source software used:"
-            android:layout_height="match_parent" />
     </LinearLayout>
 </ScrollView>

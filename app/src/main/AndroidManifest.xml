@@ -78,11 +78,10 @@
         <activity
             android:name=".Libused"
             android:label="Third-party Notices"
-            android:parentActivityName=".About"></activity>
+            android:parentActivityName=".About" />
         <activity
             android:name=".Login"
-            android:label="Login | Easy CST">
-        </activity>
+            android:label="Login | Easy CST"></activity>
     </application>
 
 </manifest>

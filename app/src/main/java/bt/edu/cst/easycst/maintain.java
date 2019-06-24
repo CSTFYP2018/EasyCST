@@ -24,6 +24,9 @@ import com.android.volley.toolbox.Volley;
 import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,7 +50,7 @@ public class maintain extends AppCompatActivity {
     ProgressDialog progressDialog;
 
     // Storing server url into String variable.
-    String HttpUrl = "http://10.2.2.89:8000/api/getmaintenance";
+    String HttpUrl = "http://192.168.43.11:8000/api/getmaintenance";
 
     Boolean CheckEditText;
 
@@ -94,23 +97,35 @@ public class maintain extends AppCompatActivity {
 
     public void MRegistration() {
         // Showing progress dialog at user registration time.
-        progressDialog.setMessage("Please Wait, While we process your request...");
+        progressDialog.setMessage("Processing your request ...\nPlease wait.....");
         progressDialog.show();
 
         // Creating string request with post method.
         StringRequest stringRequest = new StringRequest(Request.Method.POST, HttpUrl,
                 new Response.Listener<String>() {
                     @Override
-                    public void onResponse(String ServerResponse) {
+                    public void onResponse(String response) {
 
                         // Hiding the progress dialog after all task complete.
                         progressDialog.dismiss();
+                        try {
+                            JSONObject jsonobject = new JSONObject(response);
+                            if (jsonobject.names().get(0).equals("message")) {
+                                Toast.makeText(getApplicationContext(),""+jsonobject.getString("message"),Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(getApplication(),Home.class));
+                            }
+                            else{
+                                Toast.makeText(getApplicationContext(),""+jsonobject.getString("exist"),Toast.LENGTH_LONG).show();
+                            }
 
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                         // Showing Echo Response Message Coming From Server.
 
-                        Toast.makeText(maintain.this, ServerResponse, Toast.LENGTH_LONG).show();
+                        //Toast.makeText(maintain.this, ServerResponse, Toast.LENGTH_LONG).show();
                         //if (ServerResponse.equals("Registration Successful")) {
-                            startActivity(new Intent(maintain.this, Home.class));
+                            //startActivity(new Intent(maintain.this, Home.class));
                             finish();
                         //}
                     }
@@ -123,8 +138,8 @@ public class maintain extends AppCompatActivity {
                         progressDialog.dismiss();
 
                         // Showing error message if something goes wrong.
-                        //Toast.makeText(maintain.this, volleyError.toString(), Toast.LENGTH_LONG).show();
-                        Toast.makeText(maintain.this, "Somthing is not Right Try again Later", Toast.LENGTH_LONG).show();
+                        Toast.makeText(maintain.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(maintain.this, "Something is not right..\nCheck your internet connection or server is offline", Toast.LENGTH_LONG).show();
                         finish();
                     }
                 }) {

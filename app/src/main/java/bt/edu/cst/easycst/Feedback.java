@@ -20,6 +20,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,7 +42,7 @@ public class Feedback extends AppCompatActivity {
     ProgressDialog progressDialog;
 
     // Storing server url into String variable.
-    String HttpUrl = "http://10.2.2.89:8000/api/getfeedback";
+    String HttpUrl = "http://192.168.43.11:8000/api/getfeedback";
 
     Boolean CheckEditText;
 
@@ -82,16 +85,28 @@ public class Feedback extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, HttpUrl,
                 new Response.Listener<String>() {
                     @Override
-                    public void onResponse(String ServerResponse) {
+                    public void onResponse(String response) {
 
                         // Hiding the progress dialog after all task complete.
                         progressDialog.dismiss();
+                        try {
+                            JSONObject jsonobject = new JSONObject(response);
+                            if (jsonobject.names().get(0).equals("message")) {
+                                Toast.makeText(getApplicationContext(),""+jsonobject.getString("message"),Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(getApplication(),Home.class));
+                            }
+                            else{
+                                Toast.makeText(getApplicationContext(),""+jsonobject.getString("exist"),Toast.LENGTH_LONG).show();
+                            }
 
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                         // Showing Echo Response Message Coming From Server.
 
-                        Toast.makeText(Feedback.this, ServerResponse, Toast.LENGTH_LONG).show();
+                       // Toast.makeText(Feedback.this, ServerResponse, Toast.LENGTH_LONG).show();
                         //if (ServerResponse.equals("Registration Successful")) {
-                        startActivity(new Intent(Feedback.this, Home.class));
+                        //startActivity(new Intent(Feedback.this, Home.class));
                         finish();
                         //}
                     }
